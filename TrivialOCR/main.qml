@@ -12,7 +12,7 @@ Window {
         anchors.fill: parent
         Image {
             id: srcimg
-            source: "/home/vesa/Projects/trivialocr/TrivialOCR/Images/phototest.tif"
+            source: "../Images/phototest.png"
         }
         Text {
             id: name
