@@ -3,15 +3,19 @@
 
 TesseractCtrl::TesseractCtrl()
 {
-    char *outText;
 
-    tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
+
+}
+
+char TesseractCtrl::read_image() {
+    tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
+    //tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
     // Initialize tesseract-ocr with English, without specifying tessdata path
     if (api->Init(NULL, "eng")) {
         fprintf(stderr, "Could not initialize tesseract.\n");
         exit(1);
     }
-
+    char *outText;
     // Open input image with leptonica library
     Pix *image = pixRead("/home/vesa/Projects/trivialocr/TrivialOCR/Images/phototest.tif");
     api->SetImage(image);
@@ -23,6 +27,4 @@ TesseractCtrl::TesseractCtrl()
     api->End();
     delete [] outText;
     pixDestroy(&image);
-
-
 }

@@ -45,3 +45,8 @@ DEPENDPATH += $$PWD/../../../../../usr/lib/x86_64-linux-gnu  \
 
 LIBS += -L/usr/include/leptonica \
         -llept
+
+unix:!macx: LIBS += -L$$PWD/../../../../../usr/lib/x86_64-linux-gnu/ -ltesseract
+
+INCLUDEPATH += $$PWD/../../../../../usr/lib/x86_64-linux-gnu
+DEPENDPATH += $$PWD/../../../../../usr/lib/x86_64-linux-gnu
