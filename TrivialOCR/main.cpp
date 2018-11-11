@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include "tesseractctrl.h"
 
 int main(int argc, char *argv[])
@@ -13,7 +14,10 @@ int main(int argc, char *argv[])
     TesseractCtrl tess;
     //tess.read_image;
 
-    qmlRegisterType<TesseractCtrl>("io.qt.trivialocr.tesseractctrl",1,0,"TesseractCtrl");
+    QQmlContext *ctxt = engine.rootContext();
+    ctxt->setContextProperty("tesseractCtrl", &tess);
+
+    //qmlRegisterType<TesseractCtrl>("io.qt.trivialocr.tesseractctrl",1,0,"TesseractCtrl");
 
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

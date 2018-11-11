@@ -7,13 +7,20 @@
 
 class TesseractCtrl: public QObject
 {
-
+    Q_OBJECT
+    Q_PROPERTY(QString text READ get_text NOTIFY textChanged)
 public:
     TesseractCtrl();
-    Q_INVOKABLE char read_image();
+    QString get_text();
+    Q_INVOKABLE void tessImage();
+
 
 private:
+    QString text_;
     //tesseract::TessBaseAPI *api_;
+
+signals:
+    void textChanged();
 };
 
 #endif // TESSERACTCTRL_H
