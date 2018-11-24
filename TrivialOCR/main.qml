@@ -14,9 +14,10 @@ Window {
         anchors.fill: parent
         Image {
             id: srcimg
-            source: "../Images/phototest.png"
+            source: "../Images/trivial_card.png"
+            //source: "../Images/phototest.png"
         }
-        Text {
+        TextEdit {
             id: name
             text:  tesseractCtrl.text
             Component.onCompleted: console.log(tesseractCtrl.text)

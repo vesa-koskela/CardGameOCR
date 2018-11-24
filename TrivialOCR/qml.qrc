@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Images/phototest.tif</file>
         <file>Images/phototest.png</file>
+        <file>Images/trivial_card.png</file>
     </qresource>
 </RCC>
