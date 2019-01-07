@@ -25,8 +25,8 @@ void TesseractCtrl::tessImage()
     }
     char *outText;
     // Open input image with leptonica library
-    Pix *image = pixRead("/home/vesa/Projects/trivialocr/TrivialOCR/Images/trivial_card.png");
-    //Pix *image = pixRead("/home/vesa/Projects/trivialocr/TrivialOCR/Images/phototest.tif");
+    Pix *image = pixRead("/home/koskela/Downloads/IMG_0001.jpg");
+    //Pix *image = pixRead("/home/vesa/Projects/trivialocr/TrivialOCR/Images/IMG_0001.tif");
     api->SetImage(image);
     // Get OCR result
     outText = api->GetUTF8Text();

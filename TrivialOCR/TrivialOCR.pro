@@ -14,7 +14,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    tesseractctrl.cpp
+    tesseractctrl.cpp \
+    question.cpp \
+    card.cpp
 
 RESOURCES += qml.qrc
 
@@ -30,7 +32,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    tesseractctrl.h
+    tesseractctrl.h \
+    question.h \
+    card.h
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../usr/lib/x86_64-linux-gnu/release/ -ltesseract

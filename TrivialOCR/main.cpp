@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     //tess.read_image;
 
     QQmlContext *ctxt = engine.rootContext();
+    engine.rootContext()->setContextProperty("applicationDirPath", QGuiApplication::applicationDirPath());
     ctxt->setContextProperty("tesseractCtrl", &tess);
 
     //qmlRegisterType<TesseractCtrl>("io.qt.trivialocr.tesseractctrl",1,0,"TesseractCtrl");

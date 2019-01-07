@@ -13,10 +13,14 @@ Window {
     RowLayout{
         anchors.fill: parent
         Image {
+            fillMode: Image.PreserveAspectCrop //+ Image.PreserveAspectFit
+            sourceSize.height: 300
+            sourceSize.width: 600
             id: srcimg
-            source: "../Images/trivial_card.png"
-            //source: "../Images/phototest.png"
+            source : Qt.resolvedUrl("file:///home/koskela/Downloads/IMG_0001.jpg")
+            //source: "../Images/IMG_0001.tiff"
         }
+
         TextEdit {
             id: name
             text:  tesseractCtrl.text
