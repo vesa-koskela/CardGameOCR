@@ -1,6 +1,7 @@
 #ifndef QUESTION_H
 #define QUESTION_H
 #include <QString>
+#include <QObject>
 #include <memory>
 
 using std::shared_ptr;
@@ -15,15 +16,22 @@ namespace QuestionType {
 }
 
 
-class Question
+
+class Question : public QObject
 {
+    Q_OBJECT
+    Q_PROPERTY(QString question READ question NOTIFY questionChanged)
+    Q_PROPERTY(QString answer READ answer NOTIFY answerChanged)
 public:
-    Question();
+    Question(QString question = "defaultQ", QString answer = "defaultA");
+    void setQuestion(QString text);
+    void setAnswer(QString text);
+    QString question();
+    QString answer();
 private:
     QString question_;
     QString answer_;
     QString type_;
-    int cardNumber_;
 
 
 
