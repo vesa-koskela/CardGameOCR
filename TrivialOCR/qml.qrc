@@ -4,5 +4,6 @@
         <file>Images/phototest.tif</file>
         <file>Images/phototest.png</file>
         <file>Images/trivial_card.png</file>
+        <file>Form.qml</file>
     </qresource>
 </RCC>

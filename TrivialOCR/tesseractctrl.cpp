@@ -14,7 +14,7 @@ QString TesseractCtrl::get_text()
     return text_;
 }
 
-void TesseractCtrl::tessImage()
+void TesseractCtrl::readImage()
 {
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     //tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
@@ -25,9 +25,11 @@ void TesseractCtrl::tessImage()
     }
     char *outText;
     // Open input image with leptonica library
-    Pix *image = pixRead("/home/koskela/Downloads/IMG_0001.jpg");
     //Pix *image = pixRead("/home/vesa/Projects/trivialocr/TrivialOCR/Images/IMG_0001.tif");
+    Pix *image = pixRead("/home/koskela/Downloads/IMG_0001.jpg");
     api->SetImage(image);
+    api->SetSourceResolution(1000);
+
     // Get OCR result
     outText = api->GetUTF8Text();
     qDebug() << "OCR output:" << outText;
@@ -40,6 +42,7 @@ void TesseractCtrl::tessImage()
     pixDestroy(&image);
 
 }
+
 
 /*QString TesseractCtrl::read_image() {
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();

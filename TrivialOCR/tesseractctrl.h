@@ -12,7 +12,8 @@ class TesseractCtrl: public QObject
 public:
     TesseractCtrl();
     QString get_text();
-    Q_INVOKABLE void tessImage();
+    Q_INVOKABLE void readImage();
+    //Q_INVOKABLE void imgChanged(QUrl url);
 
 
 private:
