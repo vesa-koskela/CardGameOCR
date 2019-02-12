@@ -44,6 +44,7 @@ void TesseractCtrl::readImage()
 }
 
 
+
 /*QString TesseractCtrl::read_image() {
     tesseract::TessBaseAPI* api = new tesseract::TessBaseAPI();
     //tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();

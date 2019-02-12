@@ -6,12 +6,13 @@
 class Card : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(Question blue READ blue NOTIFY blueChanged)
-    Q_PROPERTY(Question pink READ pink NOTIFY pinkChanged)
-    Q_PROPERTY(Question yellow READ yellow NOTIFY yellowChanged)
-    Q_PROPERTY(Question purple READ purple NOTIFY purpleChanged)
-    Q_PROPERTY(Question green READ green NOTIFY greenChanged)
-    Q_PROPERTY(Question orange READ orange NOTIFY orangeChanged)
+    Q_PROPERTY(QString blue MEMBER m_blue NOTIFY blueChanged)
+    Q_PROPERTY(QString pink MEMBER m_pink NOTIFY pinkChanged)
+    Q_PROPERTY(QString yellow MEMBER m_yellow NOTIFY yellowChanged)
+    Q_PROPERTY(QString purple MEMBER m_purple NOTIFY purpleChanged)
+    Q_PROPERTY(QString green MEMBER m_green NOTIFY greenChanged)
+    Q_PROPERTY(QString orange MEMBER m_orange NOTIFY orangeChanged)
+    Q_PROPERTY(QString )
     Q_PROPERTY(int cardNumber READ cardNumber NOTIFY cardNumberChanged)
     Q_PROPERTY(int cardSet READ cardSet NOTIFY cardSetChanged)
 
@@ -19,14 +20,35 @@ public:
     Card();
 
 private:
-    shared_ptr<Question> blueQ_;
-    shared_ptr<Question> pinkQ_;
-    shared_ptr<Question> yellowQ_;
-    shared_ptr<Question> purpleQ_;
-    shared_ptr<Question> greenQ_;
-    shared_ptr<Question> orangeQ_;
-    int cardNumber_;
+    QString m_blueQ;
+    QString m_blueA;
+    QString m_pinkQ;
+    QString m_pinkA;
+    QString m_yellowQ;
+    QString m_yellowA;
+    QString m_purpleQ;
+    QString m_purpleA;
+    QString m_greenQ;
+    QString m_greenA;
+    QString m_orangeQ;
+    QString m_orangeA;
+    int cardNumber;
     int cardSet_;
+
+signals:
+    void blueQChanged();
+    void blueAChanged();
+    void pinkQChanged();
+    void pinkAChanged();
+    void yellowQChanged();
+    void yellowAChanged();
+    void purpleQChanged();
+    void purpleAChanged();
+    void greenQChanged();
+    void greenAChanged();
+    void orangeQChanged();
+    void orangeAChanged();
+
 };
 
 #endif // CARD_H
