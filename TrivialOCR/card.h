@@ -6,44 +6,47 @@
 class Card : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString blue MEMBER blue NOTIFY blueChanged)
-    Q_PROPERTY(QString pink MEMBER pink NOTIFY pinkChanged)
-    Q_PROPERTY(QString yellow MEMBER yellow NOTIFY yellowChanged)
-    Q_PROPERTY(QString purple MEMBER purple NOTIFY purpleChanged)
-    Q_PROPERTY(QString green MEMBER green NOTIFY greenChanged)
-    Q_PROPERTY(QString orange MEMBER orange NOTIFY orangeChanged)
-    Q_PROPERTY(bool cardSide READ isQSide WRITE changeSideType)
-    Q_PROPERTY(int cardNumber READ cardNumber WRITE setCardNumber
+    Q_PROPERTY(QString blue MEMBER mBlue NOTIFY blueChanged)
+    Q_PROPERTY(QString pink MEMBER mPink NOTIFY pinkChanged)
+    Q_PROPERTY(QString yellow MEMBER mYellow NOTIFY yellowChanged)
+    Q_PROPERTY(QString purple MEMBER mPurple NOTIFY purpleChanged)
+    Q_PROPERTY(QString green MEMBER mGreen NOTIFY greenChanged)
+    Q_PROPERTY(QString orange MEMBER mOrange NOTIFY orangeChanged)
+    Q_PROPERTY(bool side READ isSideQ WRITE changeSide NOTIFY sideChanged)
+    Q_PROPERTY(int cardNumber READ getCardNumber WRITE setCardNumber
                NOTIFY cardNumberChanged)
-    Q_PROPERTY(int cardSet READ cardSet WRITE setCardSet NOTIFY cardSetChanged)
+    Q_PROPERTY(int cardSet READ getCardSet WRITE setCardSet NOTIFY cardSetChanged)
 
 public:
-    Card();
+    Card(QList<QString> data, bool side, int number, int cardSet);
+    bool isSideQ();
+    void changeSide(bool val);
+    int getCardNumber();
+    void setCardNumber(int number);
+    int getCardSet();
+    void setCardSet(int number);
 
 private:
-    QString blue;
-    QString pink;
-    QString yellow;
-    QString purple;
-    QString green;
-    QString orange;
+    QString mBlue;
+    QString mPink;
+    QString mYellow;
+    QString mPurple;
+    QString mGreen;
+    QString mOrange;
+    bool side;
     int cardNumber;
-    int cardSet_;
+    int cardSet;
 
 signals:
-    void blueQChanged();
-    void blueAChanged();
-    void pinkQChanged();
-    void pinkAChanged();
-    void yellowQChanged();
-    void yellowAChanged();
-    void purpleQChanged();
-    void purpleAChanged();
-    void greenQChanged();
-    void greenAChanged();
-    void orangeQChanged();
-    void orangeAChanged();
-
+    void blueChanged();
+    void pinkChanged();
+    void yellowChanged();
+    void purpleChanged();
+    void greenChanged();
+    void orangeChanged();
+    void sideChanged();
+    void cardNumberChanged();
+    void cardSetChanged();
 };
 
 #endif // CARD_H
