@@ -18,7 +18,8 @@ class Card : public QObject
     Q_PROPERTY(int cardSet READ getCardSet WRITE setCardSet NOTIFY cardSetChanged)
 
 public:
-    Card(QList<QString> data);
+    Card();
+    void insertOCRresult(QList<QString> data);
     bool isSideQ();
     void changeSide(bool val);
     int getCardNumber();

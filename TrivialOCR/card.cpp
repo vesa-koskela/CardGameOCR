@@ -1,7 +1,12 @@
 #include "card.h"
 #include <QDebug>
 
-Card::Card(QList<QString> data)
+Card::Card()
+{
+
+}
+
+void Card::insertOCRresult(QList<QString> data)
 {
     textLines.clear();
     int QMarkCount = 0;
@@ -26,6 +31,9 @@ Card::Card(QList<QString> data)
             str.clear();
         }
     }
+    mBlue = textLines.at(0);
+    blueChanged();
+
     qDebug() << textLines;
 }
 

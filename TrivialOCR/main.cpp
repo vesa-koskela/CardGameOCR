@@ -13,12 +13,15 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    TesseractCtrl tess;
+    Card card;
+    TesseractCtrl tess(&card);
+
     //tess.read_image;
 
     QQmlContext *ctxt = engine.rootContext();
     engine.rootContext()->setContextProperty("applicationDirPath", QGuiApplication::applicationDirPath());
     ctxt->setContextProperty("tesseractCtrl", &tess);
+    ctxt->setContextProperty("cardTemplate", &card);
 
     //qmlRegisterType<TesseractCtrl>("io.qt.trivialocr.tesseractctrl",1,0,"TesseractCtrl");
 

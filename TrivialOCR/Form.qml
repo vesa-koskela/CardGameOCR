@@ -3,7 +3,8 @@ import QtQuick.Layouts 1.12
 
 ColumnLayout {
     TextEdit {
-        text: tesseractCtrl.text.substring(0,20)
+        text: cardTemplate.blue
+        //text: tesseractCtrl.text.substring(0,20)
     }
     TextEdit {
         text: tesseractCtrl.text.substring(20,40)

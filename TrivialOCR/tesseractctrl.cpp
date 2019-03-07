@@ -1,10 +1,11 @@
 #include "tesseractctrl.h"
 #include <QDebug>
 
-TesseractCtrl::TesseractCtrl()
+TesseractCtrl::TesseractCtrl(Card *card)
 {
     QString str = "initial text";
     text_ = str;
+    mCard = card;
 
 }
 
@@ -59,7 +60,7 @@ void TesseractCtrl::readImage()
     }
     qDebug() << lines_;
     qDebug() << lines_.length();
-    Card card(lines_);
+    mCard->insertOCRresult(lines_);
 
     /*
     //Basic
@@ -77,6 +78,11 @@ void TesseractCtrl::readImage()
     delete [] outText;
     pixDestroy(&image);
 
+}
+
+Card *TesseractCtrl::getCard()
+{
+    return mCard;
 }
 
 

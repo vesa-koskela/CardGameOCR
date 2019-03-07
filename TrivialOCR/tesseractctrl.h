@@ -10,18 +10,19 @@ class TesseractCtrl: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString text READ get_text NOTIFY textChanged)
-    //Q_PROPERTY(Card card READ card NOTIFY cardChanged)
+    Q_PROPERTY(Card* card READ getCard NOTIFY cardChanged)
 public:
-    TesseractCtrl();
+    TesseractCtrl(Card *card);
     QString get_text();
     Q_INVOKABLE void readImage();
-    Card card();
+    Card* getCard();
     //Q_INVOKABLE void imgChanged(QUrl url);
 
 
 private:
     QString text_;
     QList<QString> lines_;
+    Card *mCard;
     //tesseract::TessBaseAPI *api_;
 
 signals:
