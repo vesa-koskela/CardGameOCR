@@ -1,23 +1,47 @@
 #include "card.h"
+#include <QDebug>
 
-Card::Card(QList<QString> data, bool side, int number, int cardSet)
+Card::Card(QList<QString> data)
 {
+    textLines.clear();
+    int QMarkCount = 0;
+    for (QString i: data) {
+        if (i.contains("?")) {
+            QMarkCount++;
+        }
+    }
+    if (QMarkCount > 0) {
+        isSideA = false;
+    }
+    else {
+        isSideA = true;
+    }
 
+    QString str;
+    for (QString i: data) {
+        str.append(i);
+        str = str.trimmed();
+        if (i.contains("?")) {
+            textLines.append(str);
+            str.clear();
+        }
+    }
+    qDebug() << textLines;
 }
 
 bool Card::isSideQ()
 {
-    if(side == true) {
-        return true;
+    if(isSideA == true) {
+        return false;
     }
     else {
-        return false;
+        return true;
     }
 }
 
 void Card::changeSide(bool val)
 {
-    side = val;
+    isSideA = val;
 }
 
 int Card::getCardNumber()

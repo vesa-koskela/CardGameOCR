@@ -18,7 +18,7 @@ class Card : public QObject
     Q_PROPERTY(int cardSet READ getCardSet WRITE setCardSet NOTIFY cardSetChanged)
 
 public:
-    Card(QList<QString> data, bool side, int number, int cardSet);
+    Card(QList<QString> data);
     bool isSideQ();
     void changeSide(bool val);
     int getCardNumber();
@@ -33,7 +33,8 @@ private:
     QString mPurple;
     QString mGreen;
     QString mOrange;
-    bool side;
+    QList<QString> textLines;
+    bool isSideA;
     int cardNumber;
     int cardSet;
 

@@ -19,7 +19,7 @@ Window {
             sourceSize.height: 300
             sourceSize.width: 600
             id: srcimg
-            source : Qt.resolvedUrl("file:///home/koskela/Downloads/IMG_0001.jpg")
+            source : Qt.resolvedUrl("file:///home/veko/Downloads/IMG_0001.jpg")
             //source: "../Images/IMG_0001.tiff"
         }
 

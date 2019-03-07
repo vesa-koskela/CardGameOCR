@@ -21,6 +21,7 @@ public:
 
 private:
     QString text_;
+    QList<QString> lines_;
     //tesseract::TessBaseAPI *api_;
 
 signals:
