@@ -61,6 +61,7 @@ void TesseractCtrl::readImage()
     qDebug() << lines_;
     qDebug() << lines_.length();
     mCard->insertOCRresult(lines_);
+    cardChanged();
 
     /*
     //Basic
@@ -84,7 +85,6 @@ Card *TesseractCtrl::getCard()
 {
     return mCard;
 }
-
 
 
 /*QString TesseractCtrl::read_image() {

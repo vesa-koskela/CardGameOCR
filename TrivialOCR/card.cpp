@@ -32,7 +32,18 @@ void Card::insertOCRresult(QList<QString> data)
         }
     }
     mBlue = textLines.at(0);
+    mPink = textLines.at(1);
+    mYellow = textLines.at(2);
+    mPurple = textLines.at(3);
+    mGreen = textLines.at(4);
+    mOrange = textLines.at(5);
+
     blueChanged();
+    pinkChanged();
+    yellowChanged();
+    purpleChanged();
+    greenChanged();
+    orangeChanged();
 
     qDebug() << textLines;
 }

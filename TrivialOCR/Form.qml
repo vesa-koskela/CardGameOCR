@@ -1,12 +1,35 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.5
 
 ColumnLayout {
-    TextEdit {
+    //Layout.fillWidth: true
+    Layout.margins: 10
+    TextField{
         text: cardTemplate.blue
-        //text: tesseractCtrl.text.substring(0,20)
+
+        implicitWidth: 500
     }
-    TextEdit {
-        text: tesseractCtrl.text.substring(20,40)
+    TextField {
+        text: cardTemplate.pink
+        implicitWidth: 500
+    }
+    TextField {
+        text: cardTemplate.yellow
+        implicitWidth: 500
+    }
+    TextField {
+        text: cardTemplate.purple
+        implicitWidth: 500
+    }
+    TextField {
+        text: cardTemplate.green
+        implicitWidth: 500
+    }
+    TextField {
+        text: cardTemplate.orange
+        implicitWidth: 500
     }
 }
+
+
