@@ -13,7 +13,7 @@ class Card : public QObject
     Q_PROPERTY(QString green MEMBER mGreen NOTIFY greenChanged)
     Q_PROPERTY(QString orange MEMBER mOrange NOTIFY orangeChanged)
     Q_PROPERTY(bool side READ isSideQ WRITE changeSide NOTIFY sideChanged)
-    Q_PROPERTY(int cardNumber READ getCardNumber WRITE setCardNumber
+    Q_PROPERTY(QString cardNumber READ getCardNumber WRITE setCardNumber
                NOTIFY cardNumberChanged)
     Q_PROPERTY(int cardSet READ getCardSet WRITE setCardSet NOTIFY cardSetChanged)
 
@@ -22,8 +22,8 @@ public:
     void insertOCRresult(QList<QString> data);
     bool isSideQ();
     void changeSide(bool val);
-    int getCardNumber();
-    void setCardNumber(int number);
+    QString getCardNumber();
+    void setCardNumber(QString number);
     int getCardSet();
     void setCardSet(int number);
 
@@ -36,7 +36,7 @@ private:
     QString mOrange;
     QList<QString> textLines;
     bool isSideA;
-    int cardNumber;
+    QString cardNumber;
     int cardSet;
 
 signals:

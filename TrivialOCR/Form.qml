@@ -5,30 +5,101 @@ import QtQuick.Controls 2.5
 ColumnLayout {
     //Layout.fillWidth: true
     Layout.margins: 10
-    TextField{
-        text: cardTemplate.blue
+    ColumnLayout {
+        RadioButton {
+            //checked: cardTemplate.side
+            text: qsTr("QuestionSide")
+        }
+        RadioButton {
+            text: qsTr("AnswerSide")
+        }
 
-        implicitWidth: 500
     }
-    TextField {
-        text: cardTemplate.pink
-        implicitWidth: 500
+
+    RowLayout {
+        Rectangle {
+            width: 10
+            height: 10
+            color: "blue"
+        }
+        TextField{
+            text: cardTemplate.blue
+            implicitWidth: Math.max(500,this.contentWidth)
+        }
     }
-    TextField {
-        text: cardTemplate.yellow
-        implicitWidth: 500
+    RowLayout {
+        Rectangle {
+            width: 10
+            height: 10
+            color: "pink"
+        }
+        TextField{
+            placeholderText: "pink"
+            text: cardTemplate.pink
+            implicitWidth: Math.max(500,(this.contentWidth+25))
+
+        }
     }
-    TextField {
-        text: cardTemplate.purple
-        implicitWidth: 500
+    RowLayout {
+        Rectangle {
+            width: 10
+            height: 10
+            color: "yellow"
+        }
+        TextField{
+
+            text: cardTemplate.yellow
+            implicitWidth: Math.max(500,(this.contentWidth+10))
+        }
     }
-    TextField {
-        text: cardTemplate.green
-        implicitWidth: 500
+    RowLayout {
+        Rectangle {
+            width: 10
+            height: 10
+            color: "purple"
+        }
+        TextField{
+            text: cardTemplate.purple
+            implicitWidth: Math.max(500,this.contentWidth)
+        }
     }
-    TextField {
-        text: cardTemplate.orange
-        implicitWidth: 500
+    RowLayout {
+        Rectangle {
+            width: 10
+            height: 10
+            color: "green"
+        }
+        TextField{
+            text: cardTemplate.green
+            implicitWidth: Math.max(500,this.contentWidth)
+        }
+    }
+    RowLayout {
+        Rectangle {
+            width: 10
+            height: 10
+            color: "orange"
+        }
+        TextField{
+            text: cardTemplate.orange
+            implicitWidth: Math.max(500,this.contentWidth)
+        }
+    }
+    RowLayout{
+        Text {
+            text: qsTr("Card #")
+        }
+        TextField{
+            text: cardTemplate.cardNumber
+        }
+    }
+    RowLayout{
+        Text {
+            text: qsTr("Edition: ")
+        }
+        ComboBox {
+            model: ["0","1", "2", "3"]
+        }
     }
 }
 

@@ -36,7 +36,7 @@ Window {
                 text:  tesseractCtrl.text
                 Component.onCompleted: console.log(tesseractCtrl.text)
                 onTextChanged: {
-                    console.log("textChanged")
+                    //console.log("textChanged")
                     //name.text = tesseractCtrl.text
                 }
 

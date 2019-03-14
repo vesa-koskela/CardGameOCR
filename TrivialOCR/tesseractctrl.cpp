@@ -11,7 +11,7 @@ TesseractCtrl::TesseractCtrl(Card *card)
 
 QString TesseractCtrl::get_text()
 {
-    qDebug() << "get text";
+    //qDebug() << "get text";
     return text_;
 }
 
@@ -45,8 +45,10 @@ void TesseractCtrl::readImage()
         float conf = ri->Confidence(level);
         int x1, y1, x2, y2;
         ri->BoundingBox(level, &x1, &y1, &x2, &y2);
-        printf("word: '%s';  \tconf: %.2f; BoundingBox: %d,%d,%d,%d;\n",
-                 word, conf, x1, y1, x2, y2);
+
+
+        /*printf("word: '%s';  \tconf: %.2f; BoundingBox: %d,%d,%d,%d;\n",
+                 word, conf, x1, y1, x2, y2);*/
 
 
         QString str = word;
@@ -54,12 +56,8 @@ void TesseractCtrl::readImage()
         delete[] word;
       } while (ri->Next(level));
     }
-
-    for(QString i: lines_) {
-        qDebug() << i.contains("?");
-    }
-    qDebug() << lines_;
-    qDebug() << lines_.length();
+    //qDebug() << lines_;
+    //qDebug() << lines_.length();
     mCard->insertOCRresult(lines_);
     cardChanged();
 
