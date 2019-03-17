@@ -5,16 +5,7 @@ import QtQuick.Controls 2.5
 ColumnLayout {
     //Layout.fillWidth: true
     Layout.margins: 10
-    ColumnLayout {
-        RadioButton {
-            //checked: cardTemplate.side
-            text: qsTr("QuestionSide")
-        }
-        RadioButton {
-            text: qsTr("AnswerSide")
-        }
 
-    }
 
     RowLayout {
         Rectangle {
@@ -34,10 +25,8 @@ ColumnLayout {
             color: "pink"
         }
         TextField{
-            placeholderText: "pink"
             text: cardTemplate.pink
             implicitWidth: Math.max(500,(this.contentWidth+25))
-
         }
     }
     RowLayout {
@@ -86,21 +75,34 @@ ColumnLayout {
         }
     }
     RowLayout{
-        Text {
-            text: qsTr("Card #")
+        ColumnLayout {
+            RadioButton {
+                checked: cardTemplate.side
+                text: qsTr("QuestionSide")
+            }
+            RadioButton {
+                text: qsTr("AnswerSide")
+            }
         }
-        TextField{
-            text: cardTemplate.cardNumber
+        RowLayout{
+            Text {
+                text: qsTr("Card #")
+            }
+            TextField{
+                text: cardTemplate.cardNumber
+            }
+        }
+        RowLayout{
+            Text {
+                text: qsTr("Edition: ")
+            }
+            ComboBox {
+                model: ["0","1", "2", "3"]
+            }
         }
     }
-    RowLayout{
-        Text {
-            text: qsTr("Edition: ")
-        }
-        ComboBox {
-            model: ["0","1", "2", "3"]
-        }
-    }
+
+
 }
 
 

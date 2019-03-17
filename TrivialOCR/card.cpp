@@ -45,13 +45,25 @@ void Card::insertOCRresult(QList<QString> data)
     else {
         isSideA = true;
     }
-    mBlue = textLines.at(0);
-    mPink = textLines.at(1);
-    mYellow = textLines.at(2);
-    mPurple = textLines.at(3);
-    mGreen = textLines.at(4);
-    mOrange = textLines.at(5);
-    cardNumber = textLines.at(6);
+
+    //textLines = test;
+
+
+    qDebug() << textLines;
+    qDebug() << data;
+    qDebug() << test;
+    if (textLines.size() >=5) {
+        mBlue = textLines.at(0);
+        mPink = textLines.at(1);
+        mYellow = textLines.at(2);
+        mPurple = textLines.at(3);
+        mGreen = textLines.at(4);
+        mOrange = textLines.at(5);
+    }
+
+    if(textLines.size() >=6) {
+        cardNumber = textLines.at(6);
+    }
 
     blueChanged();
     pinkChanged();
@@ -62,9 +74,7 @@ void Card::insertOCRresult(QList<QString> data)
     cardNumberChanged();
     sideChanged();
 
-    qDebug() << textLines;
-    qDebug() << data;
-    qDebug() << test;
+
 }
 
 bool Card::isSideQ()

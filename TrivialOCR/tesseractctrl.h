@@ -16,10 +16,11 @@ public:
     QString get_text();
     Q_INVOKABLE void readImage();
     Card* getCard();
-    //Q_INVOKABLE void imgChanged(QUrl url);
+    Q_INVOKABLE void changeImage(QString url);
 
 
 private:
+    QString url_;
     QString text_;
     QList<QString> lines_;
     Card *mCard;

@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "tesseractctrl.h"
+#include "database.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,17 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+    DataBase db;
+    QSqlError err = db.initDb();
+    if (err.type() != QSqlError::NoError) {
+        qDebug() << err.text();
+        return -1;
+    }
+    err = db.addCard("mikä on suomen pääkaupunki?", 1, 0, 0);
+    if (err.type() != QSqlError::NoError) {
+        qDebug() << err.text();
+        return -1;
+    }
     Card card;
     TesseractCtrl tess(&card);
 

@@ -1,4 +1,4 @@
-QT += quick
+QT += quick sql
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -15,7 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     tesseractctrl.cpp \
-    card.cpp
+    card.cpp \
+    database.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,7 +33,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     tesseractctrl.h \
-    card.h
+    card.h \
+    database.h
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../usr/lib/x86_64-linux-gnu/release/ -ltesseract
@@ -52,3 +54,5 @@ unix:!macx: LIBS += -L$$PWD/../../../../../usr/lib/x86_64-linux-gnu/ -ltesseract
 
 INCLUDEPATH += $$PWD/../../../../../usr/lib/x86_64-linux-gnu
 DEPENDPATH += $$PWD/../../../../../usr/lib/x86_64-linux-gnu
+
+DISTFILES +=

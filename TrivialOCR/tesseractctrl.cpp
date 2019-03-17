@@ -7,6 +7,7 @@ TesseractCtrl::TesseractCtrl(Card *card)
     text_ = str;
     mCard = card;
 
+    url_ = "file://../TrivialOCR/Images/IMG_0001.jpg";
 }
 
 QString TesseractCtrl::get_text()
@@ -27,9 +28,13 @@ void TesseractCtrl::readImage()
     }
     char *outText;
     // Open input image with leptonica library
-    //Pix *image = pixRead("/home/vesa/Projects/trivialocr/TrivialOCR/Images/IMG_0001.tif");
-    Pix *image = pixRead("/home/veko/Downloads/IMG_0001.jpg");
-    api->SetPageSegMode(tesseract::PSM_SINGLE_COLUMN);
+    //Pix *image = pixRead("../TrivialOCR/Images/IMG_0001.jpg");
+    //Pix *image = pixRead("/home/koskela/Downloads/IMG_0001.jpg");
+
+    url_ = url_.remove(0,7);
+    const char *filename = url_.toLocal8Bit().data();
+    Pix *image = pixRead(filename);
+    api->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
     api->SetImage(image);
     api->SetSourceResolution(1000);
 
@@ -47,8 +52,8 @@ void TesseractCtrl::readImage()
         ri->BoundingBox(level, &x1, &y1, &x2, &y2);
 
 
-        /*printf("word: '%s';  \tconf: %.2f; BoundingBox: %d,%d,%d,%d;\n",
-                 word, conf, x1, y1, x2, y2);*/
+        printf("word: '%s';  \tconf: %.2f; BoundingBox: %d,%d,%d,%d;\n",
+                 word, conf, x1, y1, x2, y2);
 
 
         QString str = word;
@@ -74,7 +79,7 @@ void TesseractCtrl::readImage()
 
     // Destroy used object and release memory
     api->End();
-    delete [] outText;
+    //delete [] outText;
     pixDestroy(&image);
 
 }
@@ -82,6 +87,12 @@ void TesseractCtrl::readImage()
 Card *TesseractCtrl::getCard()
 {
     return mCard;
+}
+
+void TesseractCtrl::changeImage(QString url)
+{
+    url_ = url;
+    qDebug() << url;
 }
 
 
