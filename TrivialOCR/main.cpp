@@ -16,11 +16,12 @@ int main(int argc, char *argv[])
 
     DataBase db;
     QSqlError err = db.initDb();
-    if (err.type() != QSqlError::NoError) {
-        qDebug() << err.text();
+    if (err.type() != QSqlError::NoError && err.type()) {
+        qDebug() << err.text() << err.type();
+
         return -1;
     }
-    err = db.addCard("mikä on suomen pääkaupunki?", 1, 0, 0);
+    err = db.addCard("mikä on suomen pääkaupunki?", 156, 0, 0);
     if (err.type() != QSqlError::NoError) {
         qDebug() << err.text();
         return -1;
