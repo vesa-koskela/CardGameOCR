@@ -4,6 +4,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Dialogs 1.2
 
 ColumnLayout {
+    Layout.leftMargin: 100
     Rectangle {
         width: 451
         height: 300
