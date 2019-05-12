@@ -40,6 +40,8 @@ void TesseractCtrl::readImage()
 
 
 
+
+
     //Iterator
     api->Recognize(0);
     tesseract::ResultIterator* ri = api->GetIterator();
@@ -55,9 +57,9 @@ void TesseractCtrl::readImage()
         printf("word: '%s';  \tconf: %.2f; BoundingBox: %d,%d,%d,%d;\n",
                  word, conf, x1, y1, x2, y2);
 
-
         QString str = word;
         lines_.append(str);
+
         delete[] word;
       } while (ri->Next(level));
     }

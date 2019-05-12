@@ -48,11 +48,20 @@ void Card::insertOCRresult(QList<QString> data)
 
     //textLines = test;
 
+    for (QString i : textLines) {
+        int r = 0;
+        while (i.at(r).isUpper() == false && i.at(r).isNumber() == false) {
+            qDebug() << i.at(r);
+            r++;
+
+        }
+        i.remove(0,r);
+    }
 
     qDebug() << textLines;
     qDebug() << data;
     qDebug() << test;
-    if (textLines.size() >=5) {
+    if (textLines.size() > 5) {
         mBlue = textLines.at(0);
         mPink = textLines.at(1);
         mYellow = textLines.at(2);
@@ -61,7 +70,7 @@ void Card::insertOCRresult(QList<QString> data)
         mOrange = textLines.at(5);
     }
 
-    if(textLines.size() >=6) {
+    if(textLines.size() >6) {
         cardNumber = textLines.at(6);
     }
 
