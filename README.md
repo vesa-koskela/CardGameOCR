@@ -1,4 +1,4 @@
-# BoardGameCardOCR
+# CardGameOCR
 
 Personal Project for own use only. Goal is to create database of my family's boardgame cards. I have pictures (~500 so far) which contain from 2 to 20 cards each.
 
