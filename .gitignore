@@ -1,8 +1,7 @@
 *.user
-build-TrivialOCR-Desktop_Qt_5_11_2_GCC_64bit-Debug/
-build-TrivialOCR-Desktop_Qt_5_12_0_GCC_64bit-Debug/
-build-TrivialOCR*
 .directory
 *.jpg
 *.record
-/training/images/*
+*.csv
+*.xml
+training/pre-trained-model/*
