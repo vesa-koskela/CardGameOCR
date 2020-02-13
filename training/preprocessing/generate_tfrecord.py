@@ -8,8 +8,6 @@ python generate_tfrecord.py --label=<LABEL> --csv_input=<PATH_TO_ANNOTATIONS_FOL
 python generate_tfrecord.py --label=<LABEL> --csv_input=<PATH_TO_ANNOTATIONS_FOLDER>/test_labels.csv  --output_path=<PATH_TO_ANNOTATIONS_FOLDER>/test.record
 """
 
-#python generate_tfrecord.py --label0=Q_Classic --label1=A_Classic --label2=Q_Genus --label3=A_Genus --label4=Q_FamilyAdult --label5=A_FamilyAdult --label6=Q_FamilyChild --label7=A_FamilyChild --label8=Q_Master --label9=A_Master --csv_input=/home/veko/Dev/TrivialOCR/training/annotations/test_labels.csv  --output_path=/home/veko/Dev/TrivialOCR/training/annotations/test.record  --img_path=/home/veko/Dev/TrivialOCR/training/images/test
-
 
 
 from __future__ import division
@@ -32,16 +30,6 @@ flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
 flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
 #flags.DEFINE_string('label', '', 'Name of class label')
 # if your image has more labels input them as
-flags.DEFINE_string('label0', '', 'Q_Classic')
-flags.DEFINE_string('label1', '', 'A_Classic')
-flags.DEFINE_string('label2', '', 'Q_Genus')
-flags.DEFINE_string('label3', '', 'A_Genus')
-flags.DEFINE_string('label4', '', 'Q_FamilyAdult')
-flags.DEFINE_string('label5', '', 'A_FamilyAdult')
-flags.DEFINE_string('label6', '', 'Q_FamilyChild')
-flags.DEFINE_string('label7', '', 'A_FamilyChild')
-flags.DEFINE_string('label8', '', 'Q_Master')
-flags.DEFINE_string('label9', '', 'A_Master')
 # and so on.
 flags.DEFINE_string('img_path', '', 'Path to images')
 FLAGS = flags.FLAGS
