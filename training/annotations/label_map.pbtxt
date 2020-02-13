@@ -1,0 +1,40 @@
+item {
+	id: 1
+	name: 'Q_Classic'
+}
+item {
+	id: 2
+	name: 'A_Classic'
+}
+item {
+	id: 3
+	name: 'Q_Genus'
+}
+item {
+	id: 4
+	name: 'A_Genus'
+}
+item {
+	id: 5
+	name: 'Q_FamilyAdult'
+}
+item {
+	id: 6
+	name: 'A_FamilyAdult'
+}
+item {
+	id: 7
+	name: 'Q_FamilyChild'
+}
+item {
+	id: 8
+	name: 'A_FamilyChild'
+}
+item {
+	id: 9
+	name: 'Q_Master'
+}
+item {
+	id: 10
+	name: 'A_Master'
+}
