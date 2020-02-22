@@ -13,8 +13,8 @@ Plan:
 
 Progress:
 
-###08.02.20
+### 08.02.20
 Trained first model with mobilenetV1 as base model.
 
-###22.02.20
+### 22.02.20
 Testing the model for object detection.
