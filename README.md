@@ -10,3 +10,11 @@ Plan:
 - Create GUI for this process so that I can verify that the text is read correctly.
 - Save the information from the cards into a database.
 - Create program for displaying the info from the database. GUI for this too.
+
+Progress:
+
+###08.02.20
+Trained first model with mobilenetV1 as base model.
+
+###22.02.20
+Testing the model for object detection.
