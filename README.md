@@ -11,10 +11,5 @@ Plan:
 - Save the information from the cards into a database.
 - Create program for displaying the info from the database. GUI for this too.
 
-Progress:
-
-### 08.02.20
-Trained first model with mobilenetV1 as base model.
-
-### 22.02.20
-Testing the model for object detection.
+## Status 19.04.20
+Started working on the UI and testing the trained model.
